@@ -41,6 +41,12 @@
             ctx.onHide && ctx.onHide();
         });
 
+        ctx.$image.on('click', function () {
+            ctx.$mask.addClass('hide');
+            ctx.$image.addClass('hide');
+            ctx.onHide && ctx.onHide();
+        });
+
         ctx.$target.on('click', ctx.imageSelector, function () {
             loadImage($(this).attr('src'), function (img, width, height) {
                 ctx.$mask.removeClass('hide');
