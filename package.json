@@ -1,0 +1,22 @@
+{
+  "name": "imageViewer",
+  "version": "1.0.0",
+  "description": "image viewer",
+  "scripts": {},
+  "dependencies": {},
+  "author": "clarkt (clarktanglei@163.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clark-t/imageViewer.git"
+  },
+  "license": "BSD",
+  "devDependencies": {},
+  "keywords": [
+    "image",
+    "viewer"
+  ],
+  "main": "marquee.js",
+  "directories": {
+    "test": "tests"
+  }
+}
