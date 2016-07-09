@@ -38,6 +38,7 @@
         ctx.$mask.on('click', function () {
             ctx.$mask.addClass('hide');
             ctx.$image.addClass('hide');
+            ctx.onHide && ctx.onHide();
         });
 
         ctx.$target.on('click', ctx.imageSelector, function () {
@@ -59,6 +60,8 @@
                 });
                 ctx.$imageInner.html($img);
                 ctx.$image.removeClass('hide');
+
+                ctx.onShow && ctx.onShow();
             },
             function () {
 
