@@ -18,7 +18,8 @@
 
     function init(ctx) {
         ctx.$mask = $('<div class="hide"'
-            + 'style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index; 30; background: rgba(0, 0, 0, 0.6)"'
+            + 'style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index; 30;'
+            + ' background: rgba(0, 0, 0, 0.6)"'
             + '></div>');
         ctx.$image = $('<div class="hide"'
             + 'style="position: fixed; z-index: 40; top: 0; left: 0; right: 0; bottom: 0; margin: auto"'
@@ -38,13 +39,13 @@
         ctx.$mask.on('click', function () {
             ctx.$mask.addClass('hide');
             ctx.$image.addClass('hide');
-            ctx.onHide && ctx.onHide();
+            ctx.onHide();
         });
 
         ctx.$image.on('click', function () {
             ctx.$mask.addClass('hide');
             ctx.$image.addClass('hide');
-            ctx.onHide && ctx.onHide();
+            ctx.onHide();
         });
 
         ctx.$target.on('click', ctx.imageSelector, function () {
@@ -67,7 +68,7 @@
                 ctx.$imageInner.html($img);
                 ctx.$image.removeClass('hide');
 
-                ctx.onShow && ctx.onShow();
+                ctx.onShow();
             },
             function () {
 
@@ -95,20 +96,20 @@
 
         var result = {};
 
-         if (width >= clientW && clientW * height / width <= clientH) {
+        if (width >= clientW && clientW * height / width <= clientH) {
             result.width = clientW;
             result.height = clientW * height / width;
-         }
-         else if (height >= clientH && clientH * width / height <= clientW) {
+        }
+        else if (height >= clientH && clientH * width / height <= clientW) {
             result.height = clientH;
             result.width = clientH * width / height;
-         }
-         else {
+        }
+        else {
             result.width = width;
             result.height = height;
-         }
+        }
 
-         return result;
+        return result;
     }
 
     if (typeof module !== 'undefined' && typeof exports === 'object') {
