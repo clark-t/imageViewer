@@ -21,8 +21,8 @@
             + 'style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index; 30; background: rgba(0, 0, 0, 0.6)"'
             + '></div>');
         ctx.$image = $('<div class="hide"'
-            + 'style="position: fixed; z-index: 40; margin-top: ' + clientH / 2+ 'px; top: 0; left: 50%"'
-            + '><div style="position: relative; top: -50%; left: -50%"></div></div>');
+            + 'style="position: fixed; z-index: 40; top: 0; left: 0; right: 0; bottom: 0; margin: auto"'
+            + '><div></div></div>');
         $('body').append(ctx.$mask);
         $('body').append(ctx.$image);
         ctx.$imageInner = ctx.$image.children();
