@@ -15,7 +15,7 @@
     "image",
     "viewer"
   ],
-  "main": "marquee.js",
+  "main": "imageViewer.js",
   "directories": {
     "test": "tests"
   }
