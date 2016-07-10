@@ -1,4 +1,4 @@
 new ImageViewer({
-    $target: $('ul'),
-    imageSelector: 'img'
+    $root: $('ul'),
+    target: 'img'
 });

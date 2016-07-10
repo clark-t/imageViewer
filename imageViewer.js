@@ -5,8 +5,9 @@
 
 (function () {
     function ImageViewer(opts) {
-        this.$target = opts.$target;
-        this.imageSelector = opts.imageSelector;
+        opts = opts || {};
+        this.$root = opts.$root || $('body');
+        this.target = opts.target || 'img';
         this.onShow = opts.onShow || function () {};
         this.onHide = opts.onHide || function () {};
         init(this);
@@ -42,7 +43,7 @@
             ctx.onHide();
         });
 
-        ctx.$target.on('click', ctx.imageSelector, function () {
+        ctx.$root.on('click', ctx.target, function () {
             var $this = $(this);
             var url;
 
