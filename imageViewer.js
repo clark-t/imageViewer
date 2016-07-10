@@ -43,6 +43,20 @@
         });
 
         ctx.$target.on('click', ctx.imageSelector, function () {
+            var $this = $(this);
+            var url;
+
+            if ($this.is('img') && $this.attr('src')) {
+                url = $this.attr('src');
+            }
+            else if ($this.css('background-image').indexOf('url(') === 0) {
+                url = $this.css('background-image').slice(4, -1);
+            }
+
+            if (url == null) {
+                return;
+            }
+
             loadImage($(this).attr('src'), function (img, width, height) {
                 ctx.$mask.removeClass('hide');
                 var size = getProperSize(width, height);
